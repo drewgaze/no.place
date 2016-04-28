@@ -26,6 +26,8 @@ gith({
 
 	if (payload.branch === 'master') {
 
+		console.log('got payload');
+
 		execFile('./build.sh', function(error, stdout, stderr) {
 
 			console.log('rebuilt');
