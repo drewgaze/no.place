@@ -24,9 +24,9 @@ gith({
 
 }).on('all', function(payload) {
 
-	if (payload.branch === 'master') {
+	console.log('got payload');
 
-		console.log('got payload');
+	if (payload.branch === 'master') {
 
 		execFile('./build.sh', function(error, stdout, stderr) {
 
