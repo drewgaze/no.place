@@ -1,7 +1,7 @@
 var http = require('http');
 var connect = require('connect');
 var serveStatic = require('serve-static');
-var gith = require('gith').create(9001);
+var gith = require('gith').create(3001);
 var execFile = require('child_process').execFile;
 
 console.log('\n\n--- Node Version: ' + process.version + ' ---');
