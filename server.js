@@ -1,4 +1,4 @@
-var http = require("http");
+var http = require('http');
 var connect = require('connect');
 var serveStatic = require('serve-static');
 var gith = require('gith').create(9001);
@@ -17,12 +17,7 @@ var app = connect()
         console.log('Error trapped by Connect: ' + err.message + ' : ' + err.stack);
         res.end('Error trapped by Connect: ' + err.message);
     });
-
-// Start node server listening on specified port -----
-http.createServer(app).listen(80);
-
-console.log('HTTP server listening on port 80');
-
+/*
 gith({
 
 	repo: 'drewgaze/no.place'
@@ -36,4 +31,9 @@ gith({
 			console.log('rebuilt');
 		});
 	}
-});
+});*/
+
+// Start node server listening on specified port -----
+http.createServer(app).listen(3000);
+
+console.log('HTTP server listening on port 3000');
