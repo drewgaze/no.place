@@ -17,7 +17,7 @@ var app = connect()
         console.log('Error trapped by Connect: ' + err.message + ' : ' + err.stack);
         res.end('Error trapped by Connect: ' + err.message);
     });
-/*
+
 gith({
 
 	repo: 'drewgaze/no.place'
@@ -31,7 +31,7 @@ gith({
 			console.log('rebuilt');
 		});
 	}
-});*/
+});
 
 // Start node server listening on specified port -----
 http.createServer(app).listen(3000);
