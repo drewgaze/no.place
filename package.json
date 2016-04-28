@@ -1,0 +1,25 @@
+{
+  "name": "no.place",
+  "version": "1.0.0",
+  "description": "my personal site",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drewgaze/no.place.git"
+  },
+  "author": "Andrew McGarrity <adrmcgarrity@gmail.com> (@drewgaze)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/drewgaze/no.place/issues"
+  },
+  "homepage": "https://github.com/drewgaze/no.place#readme",
+  "dependencies": {
+    "connect": "^3.4.1",
+    "gith": "^1.0.4",
+    "serve-static": "^1.10.2"
+  }
+}
