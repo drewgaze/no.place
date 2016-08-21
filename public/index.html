@@ -29,31 +29,14 @@
 	<script>
 
 	(function() {
+
 	    var app = {
-
-	        'routes': {
-
-	            'about': {
-	                'rendered': function() {
-	                }
-	            },
-
-	            'projects': {
-	                'rendered': function() {
-	                }
-	             },
-
-	            'contact': {
-	                'rendered': function() {
-	                }
-	             }
-	        },
 
 	        'default': 'home',
 
 	        'routeChange': function() {
+	        	
 	            app.routeId = location.hash.slice(1);
-	            app.route = app.routes[app.routeId];
 	            app.link = document.getElementById(app.routeId + "Link");
 
 	            for (var link of app.links) {
@@ -62,10 +45,6 @@
 	            }
 
 				app.link.className += "selected";
-
-	            if (app.route) {
-				    app.route.rendered();
-				}
 	        },
 	        
 	        'init': function() {
@@ -73,6 +52,7 @@
 	        	app.links = document.getElementById("nav").getElementsByTagName("a");
 
 	            window.addEventListener('hashchange', function() {
+
 	                app.routeChange();
 	            });
 
