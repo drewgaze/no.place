@@ -17,7 +17,7 @@ var app = connect()
         res.end('Error trapped by Connect: ' + err.message);
     });
 
-githooked('refs/heads/master', 'git pull && npm run build').listen(3000)
+githooked('refs/heads/master', 'git pull && npm run build').listen(9001);
 
 // Start node server listening on specified port -----
 http.createServer(app).listen(3000);
