@@ -26,7 +26,7 @@ gith({
 
 	console.log('got payload');
 
-	if (payload.branch === 'master') {
+	if (payload.ref === 'refs/heads/master') {
 
 		execFile('./build.sh', function(error, stdout, stderr) {
 

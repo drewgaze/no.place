@@ -6,24 +6,64 @@ body {
 	font-size: 1em;
 }
 
-ul {
+nav {
+
+	width: 30%;
+}
+
+nav > ul {
 
 	list-style-type: none;
 	float: right;
 }
 
-nav {
+main {
 
-	width: 30%;
-	display: flex;
-	float: left;
+	width: 50%;
+	margin-left: 10%;
 }
 
-section {
+main > * {
 
-	width: 70%;
+    display: none;
+}
+
+main > *:last-child {
+
+    display: block;
+}
+
+main > *:target {
+    
+    display: block;
+}
+
+main > *:target ~ * {
+
+    display: none;
+}
+
+a {
+
+	text-decoration: none;
+	color: #678CB1;
+}
+
+.headerContainer {
+
 	display: flex;
-	float: left;
+	width: 100%;
+	justify-content: center;
+}
+
+.container {
+
+	display: flex;
+}
+
+.selected {
+
+	color: #82677E;
 }
 
 .selected::before {
