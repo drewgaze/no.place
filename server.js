@@ -1,8 +1,7 @@
 var http = require('http');
 var connect = require('connect');
 var serveStatic = require('serve-static');
-var gith = require('gith').create(3001);
-var execFile = require('child_process').execFile;
+var githooked = require('githooked');
 
 console.log('\n\n--- Node Version: ' + process.version + ' ---');
 
@@ -18,22 +17,7 @@ var app = connect()
         res.end('Error trapped by Connect: ' + err.message);
     });
 
-gith({
-
-	repo: 'drewgaze/no.place'
-
-}).on('all', function(payload) {
-
-	console.log('got payload');
-
-	if (payload.ref === 'refs/heads/master') {
-
-		execFile('./build.sh', function(error, stdout, stderr) {
-
-			console.log('rebuilt');
-		});
-	}
-});
+githooked('refs/heads/master', 'git pull && npm run build').listen(3000)
 
 // Start node server listening on specified port -----
 http.createServer(app).listen(3000);
