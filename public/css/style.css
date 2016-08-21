@@ -1,0 +1,48 @@
+body {
+
+	background-color: #31363D;
+	color: #E0E2E4;
+	font-family: 'Hack', monospace;
+	font-size: 1em;
+}
+
+nav {
+
+
+}
+
+ul {
+
+	list-style-type: none;
+	float: right;
+}
+
+nav {
+
+	width: 30%;
+	display: flex;
+	float: left;
+}
+
+section {
+
+	width: 70%;
+	display: flex;
+	float: left;
+}
+
+a:active {
+
+
+}
+
+.selected::before {
+
+	content: "//";
+	position: absolute;
+	float: left;
+	margin-left: -1.25em;
+	color: #E0E2E4;
+	font-size: .75em;
+	margin-top: .25em;
+}
