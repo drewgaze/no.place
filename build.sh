@@ -1,5 +1,5 @@
 #!/bin/bash
 
-git pull https://github.com/drewgaze/no.place.git master
+git pull origin master
 
 npm install
