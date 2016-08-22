@@ -30,8 +30,6 @@
 
 		    var app = {
 
-		        'default': 'home',
-
 		        'routeChange': function() {
 
 		            app.routeId = location.hash.slice(1) || 'home';
@@ -51,9 +49,9 @@
 
 		        	app.links = document.getElementById("nav").getElementsByTagName("a");
 
-		            window.addEventListener('hashchange', function() {
+		            window.addEventListener('hashchange', function(e) {
 
-		                app.routeChange();
+	                	app.routeChange();
 		            });
 
 	                app.routeChange();
