@@ -34,7 +34,7 @@
 
 		        'routeChange': function() {
 
-		            app.routeId = location.hash.slice(1);
+		            app.routeId = location.hash.slice(1) || 'home';
 		            app.link = document.getElementById(app.routeId + "Link");
 
 		            for (var link of app.links) {
@@ -49,6 +49,11 @@
 		        
 		        'init': function() {
 
+		        	window.addEventListener('scroll', function() {
+
+		        		console.log('scrolled');
+		        	});
+
 		        	app.links = document.getElementById("nav").getElementsByTagName("a");
 
 		            window.addEventListener('hashchange', function() {
@@ -56,14 +61,7 @@
 		                app.routeChange();
 		            });
 
-		            if (!window.location.hash) {
-
-		                window.location.hash = app.default;
-
-		            } else {
-
-		                app.routeChange();
-		            }
+	                app.routeChange();
 		        }
 		    };
 
