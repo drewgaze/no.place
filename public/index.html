@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+   		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     	<link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css">
     	<link rel="stylesheet" type="text/css" href="/css/style.css">
         <title>no.place</title>
@@ -9,67 +10,67 @@
 	    <div class="headerContainer">
 	    	<header><h1>no.place</h1></header>
 	    </div>
-	    <div class="container">
-		    <nav id="nav">
-			    <ul>
-			    	<li><a id="homeLink" href="#home">home</a></li>
-			    	<li><a id="aboutLink" href="#about">about</a></li>
-			    	<li><a id="projectsLink" href="#projects">projects</a></li>
-			    	<li><a id="contactLink" href="#contact">contact</a></li>
-			    </ul>
-			</nav>
-		    <main id="main">
-		    	<div id="about">I am a junior web developer.</div>
-		    	<div id="projects">Here are my personal projects.</div>
-		    	<div id="contact">Reach me @drewgaze.</div>
-		    	<div id="home">Welcome to my personal site.</div>
-		    </main>
-	    </div>
-    </body>
+	    <nav id="nav">
+		    <ul>
+		    	<li><a id="homeLink" href="#home">home</a></li>
+		    	<li><a id="aboutLink" href="#about">about</a></li>
+		    	<li><a id="projectsLink" href="#projects">projects</a></li>
+		    	<li><a id="contactLink" href="#contact">contact</a></li>
+		    </ul>
+		</nav>
+	    <main id="main">
+	    	<div id="about">I am a junior application developer.</div>
+	    	<div id="projects">Here are my personal projects.</div>
+	    	<div id="contact">Reach me @drewgaze.</div>
+	    	<div id="home">Welcome to my personal site.</div>
+	    </main>
+
 	<script>
+		(function() {
 
-	(function() {
+		    var app = {
 
-	    var app = {
+		        'default': 'home',
 
-	        'default': 'home',
+		        'routeChange': function() {
 
-	        'routeChange': function() {
+		            app.routeId = location.hash.slice(1);
+		            app.link = document.getElementById(app.routeId + "Link");
 
-	            app.routeId = location.hash.slice(1);
-	            app.link = document.getElementById(app.routeId + "Link");
+		            for (var link of app.links) {
 
-	            for (var link of app.links) {
+		            	link.classList.remove("selected");
+		            }
 
-	            	link.classList.remove("selected");
-	            }
+					app.link.className += "selected";
 
-				app.link.className += "selected";
-	        },
-	        
-	        'init': function() {
+					document.querySelector('body').scrollTop = 0;
+		        },
+		        
+		        'init': function() {
 
-	        	app.links = document.getElementById("nav").getElementsByTagName("a");
+		        	app.links = document.getElementById("nav").getElementsByTagName("a");
 
-	            window.addEventListener('hashchange', function() {
+		            window.addEventListener('hashchange', function() {
 
-	                app.routeChange();
-	            });
+		                app.routeChange();
+		            });
 
-	            if (!window.location.hash) {
+		            if (!window.location.hash) {
 
-	                window.location.hash = app.default;
+		                window.location.hash = app.default;
 
-	            } else {
+		            } else {
 
-	                app.routeChange();
-	            }
-	        }
-	    };
+		                app.routeChange();
+		            }
+		        }
+		    };
 
-	    window.app = app;
-	})();
+		    window.app = app;
+		})();
 
-	app.init();
+		app.init();
 	</script>
+    </body>
 </html>

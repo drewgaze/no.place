@@ -9,18 +9,21 @@ body {
 nav {
 
 	width: 30%;
+	float: left;
 }
 
-nav > ul {
+nav ul {
 
 	list-style-type: none;
 	float: right;
+	margin-top: 0em;
 }
 
 main {
 
 	width: 50%;
 	margin-left: 10%;
+	float: left;
 }
 
 main > * {
@@ -56,11 +59,6 @@ a {
 	justify-content: center;
 }
 
-.container {
-
-	display: flex;
-}
-
 .selected {
 
 	color: #82677E;
@@ -75,4 +73,38 @@ a {
 	color: #E0E2E4;
 	font-size: .75em;
 	margin-top: .25em;
+}
+
+@media screen and (max-width : 760px) {
+
+	body {
+
+		font-size: 4vmin;
+	}
+
+	main {
+
+		width: 100%;
+	}
+
+	nav {
+
+		width: 100%;
+	}
+	
+	nav ul {
+
+		float: none;
+		display: inline-flex;
+	}
+
+	ul li {
+
+		padding-right: 1.5em;
+	}
+	
+	ul li, li a {
+
+		width: 100%;
+	}
 }
