@@ -28,6 +28,11 @@ main {
 	z-index: -1;
 }
 
+main div {
+
+	width: 30%;
+}
+
 main > * {
 
     display: none;
@@ -104,6 +109,11 @@ article {
 
 		margin-left: 0;
 		position: relative;
+	}
+
+	main div {
+
+		width: auto;
 	}
 
 	nav {

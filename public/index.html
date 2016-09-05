@@ -20,10 +20,10 @@
 		    </ul>
 		</nav>
 	    <main id="main">
-	    	<div id="about">I am a junior application developer.</div>
+	    	<div id="about">I am an application developer.</div>
 	    	<div id="blog" class="blog"><my-blog></my-blog></div>
 	    	<div id="projects">Here are my personal projects.</div>
-	    	<div id="contact">Reach me @drewgaze.</div>
+	    	<div id="contact">You can reach me via email at adrmcgarrity (at) gmail dot com.</div>
 	    	<div id="home">Welcome to my personal site.</div>
 	    </main>
 
@@ -37,14 +37,14 @@
 		        'routeChange': function() {
 
 		            app.routeId = location.hash.slice(1) || 'home';
-		            app.link = document.getElementById(app.routeId + "Link");
+		            app.link = document.getElementById(app.routeId + 'Link');
 
 		            for (var link of app.links) {
 
-		            	link.classList.remove("selected");
+		            	link.classList.remove('selected');
 		            }
 
-					app.link.className += "selected";
+					app.link.className += 'selected';
 
 					document.querySelector('body').scrollTop = 0;
 
@@ -53,18 +53,18 @@
 						if ( ! app.mounted) {
 
 							var xmlhttp = new XMLHttpRequest();
-							var url = "/posts";
+							var url = '/posts';
 
 							xmlhttp.onreadystatechange = function() {
 
 							    if (this.readyState == 4 && this.status == 200) {
-							        var response = JSON.parse(this.responseText);
-							        riot.mount('my-blog', {posts: response});
+
+							        riot.mount('my-blog', {posts: JSON.parse(this.responseText)});
 							        app.mounted = true;
 							    }
 							};
 							
-							xmlhttp.open("GET", url, true);
+							xmlhttp.open('GET', url, true);
 							xmlhttp.send();
 						}
 					}
@@ -72,7 +72,7 @@
 		        
 		        'init': function() {
 
-		        	app.links = document.getElementById("nav").getElementsByTagName("a");
+		        	app.links = document.getElementById('nav').getElementsByTagName('a');
 
 		            window.addEventListener('hashchange', function(e) {
 
