@@ -14,17 +14,21 @@
 		    <ul>
 		    	<li><a id="homeLink" href="#home">home</a></li>
 		    	<li><a id="aboutLink" href="#about">about</a></li>
+		    	<li><a id="blogLink" href="#blog">blog</a></li>
 		    	<li><a id="projectsLink" href="#projects">projects</a></li>
 		    	<li><a id="contactLink" href="#contact">contact</a></li>
 		    </ul>
 		</nav>
 	    <main id="main">
 	    	<div id="about">I am a junior application developer.</div>
+	    	<div id="blog" class="blog"><my-blog></my-blog></div>
 	    	<div id="projects">Here are my personal projects.</div>
 	    	<div id="contact">Reach me @drewgaze.</div>
 	    	<div id="home">Welcome to my personal site.</div>
 	    </main>
 
+	<script src="/tags/my-blog.tag" type="riot/tag"></script>
+	<script src="https://cdn.jsdelivr.net/riot/2.6/riot+compiler.min.js"></script>
 	<script>
 		(function() {
 
@@ -43,6 +47,25 @@
 					app.link.className += "selected";
 
 					document.querySelector('body').scrollTop = 0;
+
+					if (app.routeId == 'blog') {
+
+						if ( ! app.mounted) {
+
+							var xmlhttp = new XMLHttpRequest();
+							var url = "/posts";
+
+							xmlhttp.onreadystatechange = function() {
+							    if (this.readyState == 4 && this.status == 200) {
+							        var response = JSON.parse(this.responseText);
+							        riot.mount('my-blog', {posts: response});
+							        app.mounted = true;
+							    }
+							};
+							xmlhttp.open("GET", url, true);
+							xmlhttp.send();
+						}
+					}
 		        },
 		        
 		        'init': function() {
@@ -55,6 +78,8 @@
 		            });
 
 	                app.routeChange();
+
+	                app.mounted = false;
 		        }
 		    };
 

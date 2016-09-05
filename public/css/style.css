@@ -54,6 +54,12 @@ a {
 	color: #678CB1;
 }
 
+h3 {
+
+	text-align: center;
+	margin-top: 0px;
+}
+
 .headerContainer {
 
 	display: flex;
@@ -75,6 +81,11 @@ a {
 	color: #E0E2E4;
 	font-size: .75em;
 	margin-top: .15em;
+}
+
+.blog {
+
+	width: 30%;
 }
 
 @media screen and (max-width : 760px) {
@@ -114,5 +125,10 @@ a {
 		margin-left: -4vmin;
 		font-size: 3vmin;
 		margin-top: .5vmin;
+	}
+
+	.blog {
+
+		width: 100%;
 	}
 }
