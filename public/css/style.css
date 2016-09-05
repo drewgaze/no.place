@@ -20,7 +20,7 @@ nav ul {
 
 main {
 
-	width: 100%;
+	width: 99%;
 	float: left;
 	display: flex;
 	position: absolute;
@@ -56,8 +56,13 @@ a {
 
 h3 {
 
-	text-align: center;
 	margin-top: 0px;
+	margin-bottom: .5em;
+}
+
+article {
+
+	text-align: center;
 }
 
 .headerContainer {
