@@ -8,7 +8,7 @@ body {
 
 nav {
 
-	width: 30%;
+	width: 20%;
 }
 
 nav ul {
@@ -20,17 +20,11 @@ nav ul {
 
 main {
 
-	width: 99%;
-	float: left;
+	width: 100%;
 	display: flex;
 	position: absolute;
 	justify-content: center;
 	z-index: -1;
-}
-
-main div {
-
-	width: 30%;
 }
 
 main > * {
@@ -63,11 +57,6 @@ h3 {
 
 	margin-top: 0px;
 	margin-bottom: .5em;
-}
-
-article {
-
-	text-align: center;
 }
 
 .headerContainer {
@@ -114,6 +103,8 @@ article {
 	main div {
 
 		width: auto;
+		margin-left: 10%;
+		margin-right: 10%;
 	}
 
 	nav {
