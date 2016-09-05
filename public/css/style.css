@@ -9,7 +9,6 @@ body {
 nav {
 
 	width: 30%;
-	float: left;
 }
 
 nav ul {
@@ -21,9 +20,12 @@ nav ul {
 
 main {
 
-	width: 50%;
-	margin-left: 10%;
+	width: 100%;
 	float: left;
+	display: flex;
+	position: absolute;
+	justify-content: center;
+	z-index: -1;
 }
 
 main > * {
@@ -84,10 +86,8 @@ a {
 
 	main {
 
-		width: 100%;
-		display: flex;
-		justify-content: center;
 		margin-left: 0;
+		position: relative;
 	}
 
 	nav {
@@ -112,7 +112,6 @@ a {
 	.selected::before {
 
 		margin-left: -4vmin;
-		color: #E0E2E4;
 		font-size: 3vmin;
 		margin-top: .5vmin;
 	}
