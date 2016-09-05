@@ -98,17 +98,15 @@ a {
 	nav ul {
 
 		float: none;
-		display: inline-flex;
+		display: flex;
+		padding: 0px;
+		justify-content: space-around;
+
 	}
 
 	ul li {
 
-		padding-right: 1.5em;
-	}
-	
-	ul li, li a {
-
-		width: 100%;
+		padding-right: 0px;
 	}
 
 	.selected::before {
