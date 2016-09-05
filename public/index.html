@@ -28,7 +28,7 @@
 	    </main>
 
 	<script src="/tags/my-blog.tag" type="riot/tag"></script>
-	<script src="https://cdn.jsdelivr.net/riot/2.6/riot+compiler.min.js"></script>
+	<script src="/lib/riot+compiler.min.js"></script>
 	<script>
 		(function() {
 
@@ -56,12 +56,14 @@
 							var url = "/posts";
 
 							xmlhttp.onreadystatechange = function() {
+
 							    if (this.readyState == 4 && this.status == 200) {
 							        var response = JSON.parse(this.responseText);
 							        riot.mount('my-blog', {posts: response});
 							        app.mounted = true;
 							    }
 							};
+							
 							xmlhttp.open("GET", url, true);
 							xmlhttp.send();
 						}
