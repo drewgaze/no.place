@@ -35,9 +35,11 @@
 		            app.routeId = location.hash.slice(1) || 'home';
 		            app.link = document.getElementById(app.routeId + "Link");
 
-		            for (var link of app.links) {
+		            //for (var link of app.links) {
+		            for (var i = 0; i < app.links.length; i++); {
 
-		            	link.classList.remove("selected");
+		            	//link.classList.remove("selected");
+		            	app.links[i].classList.remove("selected");
 		            }
 
 					app.link.className += "selected";
