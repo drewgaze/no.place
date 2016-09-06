@@ -127,13 +127,6 @@ a:hover::before {
 		padding-right: 0px;
 	}
 
-	.selected::before {
-
-		margin-left: -4vmin;
-		font-size: 3vmin;
-		margin-top: .5vmin;
-	}
-
 	.blog {
 
 		width: 100%;
