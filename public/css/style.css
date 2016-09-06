@@ -127,6 +127,11 @@ a:hover::before {
 		padding-right: 0px;
 	}
 
+	a:hover::before {
+
+		content: none;
+	}
+
 	.blog {
 
 		width: 100%;
