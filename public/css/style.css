@@ -4,6 +4,7 @@ body {
 	color: #E0E2E4;
 	font-family: 'Hack', monospace;
 	font-size: 1em;
+	margin:0;
 }
 
 nav {
@@ -71,7 +72,7 @@ h3 {
 	color: #82677E;
 }
 
-.selected::before {
+a:hover::before {
 
 	content: "//";
 	position: absolute;
