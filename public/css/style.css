@@ -60,6 +60,11 @@ h3 {
 	margin-bottom: .5em;
 }
 
+div:nth-child(2) article h3 {
+
+	margin-top: .5em;
+}
+
 .headerContainer {
 
 	display: flex;
@@ -104,8 +109,8 @@ a:hover::before {
 	main div {
 
 		width: auto;
-		margin-left: 10%;
-		margin-right: 10%;
+		margin-left: 5%;
+		margin-right: 5%;
 	}
 
 	nav {
@@ -119,7 +124,6 @@ a:hover::before {
 		display: flex;
 		padding: 0px;
 		justify-content: space-around;
-
 	}
 
 	ul li {
